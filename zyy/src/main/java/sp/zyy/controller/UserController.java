@@ -1,5 +1,7 @@
 package sp.zyy.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +30,7 @@ import sp.zyy.service.RoleService;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
     private RoleService roleService;
 
@@ -58,6 +60,7 @@ public class UserController {
         String name = roleDto.getName();
         int count = roleService.count(name);
         if (count == 1) {
+            logger.info("账户已存在，这个校验需要前后台都校验！");
             return ResponseEntity.ok(null);
         }
         RoleEntity roleEntity = new RoleEntity();
