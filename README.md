@@ -1,3 +1,5 @@
+Eureka Server :http://121.199.56.177:18005/
+Swagger Html  :http://localhost:18001/swagger-ui.html#/
 # zyy
 -写在前面的话:
 -----我是一个工作快5年的老菜鸟了,总感觉自己应该做些什么.因此构建了这个项目,
