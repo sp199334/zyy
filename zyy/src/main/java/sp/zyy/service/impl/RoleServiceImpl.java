@@ -40,4 +40,16 @@ public class RoleServiceImpl implements RoleService {
         return roleRepo.count(name);
     }
 
+    /** 
+      * 方法：getRoleByName 
+      * @see sp.zyy.service.RoleService#getRoleByName(java.lang.String)
+      * 方法说明： 
+      * @author     shipeng
+      * @date       2019年6月29日
+     */
+    @Override
+    public RoleEntity getRoleByName(String name) {
+        return roleRepo.getRoleByName(name);
+    }
+
 }
