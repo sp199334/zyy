@@ -19,4 +19,15 @@ public interface RoleRepo extends JpaRepository<RoleEntity, Long> {
 
     @Query("select count(*) from RoleEntity r where r.name =?1")
     int count(@Param("name") String name);
+
+    /** 
+      * 方法：getRoleByName 
+      * 方法说明：    TODO
+      * @param name
+      * @return
+      * @author     shipeng
+      * @date       2019年6月29日
+    */
+    @Query("select r from RoleEntity r where r.name =?1")
+    RoleEntity getRoleByName(@Param("name") String name);
 }

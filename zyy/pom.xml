@@ -27,11 +27,6 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.55</version>
 		</dependency>
-		<dependency>
-			<groupId>sp</groupId>
-			<artifactId>requests</artifactId>
-			<version>4.8.0</version>
-		</dependency>
 
 		<!-- <dependency> <groupId>com.jfinal</groupId> <artifactId>jetty-server</artifactId> 
 			<version>2019.3</version> </dependency> <dependency> <groupId>com.jfinal</groupId> 
@@ -51,8 +46,10 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!-- <dependency> <groupId>org.springframework.cloud</groupId> <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId> 
-			</dependency> -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -103,16 +100,16 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	<profiles>
-		<!-- 开发环境 -->
+<!-- 	<profiles>
+		开发环境
 		<profile>
 			<id>dev</id>
 			<activation>
 				<activeByDefault>true</activeByDefault>
 			</activation>
-			<!-- 以下配置properties中用到一些变量，如数据库连接参数、日志打印等 -->
+			以下配置properties中用到一些变量，如数据库连接参数、日志打印等
 			<properties>
-				<!-- DB Resource -->
+				DB Resource
 				<jdbc_driverClassName>com.mysql.jdbc.Driver</jdbc_driverClassName>
 				<jdbc_url>jdbc:mysql://localhost:3306/learning</jdbc_url>
 				<jdbc_username>root</jdbc_username>
@@ -125,5 +122,24 @@
 				<log.stdout.ref><![CDATA[<appender-ref ref="stdout" />]]></log.stdout.ref>
 			</properties>
 		</profile>
-	</profiles>
+	</profiles> -->
+	
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin </artifactId>
+				<configuration>
+					<mainClass>sp.zyy.Application</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

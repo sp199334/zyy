@@ -16,4 +16,6 @@ public interface RoleService {
     RoleEntity save(RoleEntity roleEntity);
 
     int count(String name);
+
+    RoleEntity getRoleByName(String name);
 }
