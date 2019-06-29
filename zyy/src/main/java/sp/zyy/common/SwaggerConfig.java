@@ -30,7 +30,7 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any()).build()
                 .apiInfo(new ApiInfoBuilder().title("献给最爱的小宝贝-赵玥伊")
                         .description("").version("1.0")
-                        .contact(new Contact("玥伊的妈妈", "www.zhaoyueyi.cn",
+                        .contact(new Contact("赵玥伊", "www.zhaoyueyi.cn",
                                 "995142516@qq.com"))
                         .license("赵玥伊的网站 :http://www.zhaoyueyi.cn")
                         .licenseUrl("http://www.zhaoyueyi.cn").build());

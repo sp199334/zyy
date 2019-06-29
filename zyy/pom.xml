@@ -18,20 +18,17 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+		<shiro.spring.version>1.4.0</shiro.spring.version>
+		<jwt.auth0.version>3.2.0</jwt.auth0.version>
+		<swagger.version>2.9.2</swagger.version>
+		<fastjson.version>1.2.55</fastjson.version>
 	</properties>
 	<dependencies>
-
-
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.55</version>
+			<version>${fastjson.version}</version>
 		</dependency>
-
-		<!-- <dependency> <groupId>com.jfinal</groupId> <artifactId>jetty-server</artifactId> 
-			<version>2019.3</version> </dependency> <dependency> <groupId>com.jfinal</groupId> 
-			<artifactId>jfinal</artifactId> <version>3.8</version> </dependency> -->
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -74,12 +71,12 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.9.2</version>
+			<version>${swagger.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.9.2</version>
+			<version>${swagger.version}</version>
 		</dependency>
 
 		<!--集成log4j -->
@@ -87,6 +84,27 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
+
+		<!--集成shiro/jwt鉴权 -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-web-starter</artifactId>
+			<version>${shiro.spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>${jwt.auth0.version}</version>
+		</dependency>
+		
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -100,31 +118,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-<!-- 	<profiles>
-		开发环境
-		<profile>
-			<id>dev</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			以下配置properties中用到一些变量，如数据库连接参数、日志打印等
-			<properties>
-				DB Resource
-				<jdbc_driverClassName>com.mysql.jdbc.Driver</jdbc_driverClassName>
-				<jdbc_url>jdbc:mysql://localhost:3306/learning</jdbc_url>
-				<jdbc_username>root</jdbc_username>
-				<jdbc_password>christmas258@</jdbc_password>
-
-				<log.moduleName>ssm-project</log.moduleName>
-				<log.base>logs</log.base>
-				<log.other.level>DEBUG</log.other.level>
-				<log.root.level>DEBUG</log.root.level>
-				<log.stdout.ref><![CDATA[<appender-ref ref="stdout" />]]></log.stdout.ref>
-			</properties>
-		</profile>
-	</profiles> -->
-	
-		<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
