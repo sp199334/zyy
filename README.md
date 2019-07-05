@@ -1,5 +1,8 @@
-Eureka Server :http://121.199.56.177:18005/
-Swagger Html  :http://localhost:18001/swagger-ui.html#/
+Eureka Server :http://www.zhaoyueyi.cn.199.56.177:18005/
+Swagger Html  :http://www.zhaoyueyi.cn:18001/swagger-ui.html#/
+RabbitMQ      :http://www.zhaoyueyi.cn:15672/#/users
+秒杀网站框架   :http://www.zhaoyueyi.cn
+
 # zyy
 -写在前面的话:
 -----我是一个工作快5年的老菜鸟了,总感觉自己应该做些什么.因此构建了这个项目,
